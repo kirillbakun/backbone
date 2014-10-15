@@ -1,15 +1,113 @@
 <!doctype HTML>
-<html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Backbone</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="css/contrib/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/contrib/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
 
     <script src="js/contrib/jquery-1.11.1.min.js"></script>
+    <script src="js/contrib/bootstrap.min.js"></script>
     <script src="js/contrib/underscore-min.js"></script>
     <script src="js/contrib/backbone-min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/notifications.js"></script>
 </head>
 <body>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Brand</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div class="main container-fluid">
+    <div class="row">
+        <div class="col-xs-1">
+            <button type="button" id="add-notification" class="btn btn-success" data-toggle="modal" data-target="#notificationModal">
+                Add Note
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <form id="notification-form" class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="notification-theme" class="col-sm-2 control-label">Theme</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="notification-theme">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notification-text" class="col-sm-2 control-label">Text</label>
+                        <div class="col-sm-10">
+                            <textarea id="notification-text" class="form-control" rows="3"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-action="save-notification">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/template" id="notification-item">
+    <p class="theme col-xs-10"><%= theme %></p>
+    <div class="more-info"><%= text %></div>
+
+    <div class="dropdown col-xs-2">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            Actions
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#" data-action="view">View</a></li>
+            <li><a href="#" data-action="edit">Edit</a></li>
+            <li><a href="#" data-action="delete">Delete</a></li>
+        </ul>
+    </div>
+</script>
+
 </body>
 </html>
