@@ -67,8 +67,8 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <h4 class="modal-title" id="myModalLabel">Modal title</h4>
             </div>
-            <div class="modal-body">
-                <form id="notification-form" class="form-horizontal" role="form">
+            <form id="notification-form" class="form-horizontal" role="form">
+                <div class="modal-body">
                     <div class="form-group">
                         <label for="notification-theme" class="col-sm-2 control-label">Theme</label>
                         <div class="col-sm-10">
@@ -82,12 +82,13 @@
                             <textarea id="notification-text" class="form-control" rows="3"></textarea>
                         </div>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-action="save-notification">Save changes</button>
-            </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" id="save-notification" class="btn btn-primary" data-action="save-notification">Save changes</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -102,9 +103,9 @@
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" role="menu">
-            <li><a href="#" data-action="view">View</a></li>
-            <li><a href="#" data-action="edit">Edit</a></li>
-            <li><a href="#" data-action="delete">Delete</a></li>
+            <li><a href="#" class="view-notification">View</a></li>
+            <li><a href="#" class="edit-notification">Edit</a></li>
+            <li><a href="#" class="edit-notification">Delete</a></li>
         </ul>
     </div>
 </script>

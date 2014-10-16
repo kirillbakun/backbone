@@ -4,5 +4,5 @@ html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre
 .main {max-width: 720px;}
 
 .notifications-list li {padding: 5px 0;}
-.notifications-list li:nth-child(even) {background: #e0e0e0;}
+.notifications-list > li:nth-child(even) {background: #e0e0e0;}
 .notifications-list .more-info {display: none;}
